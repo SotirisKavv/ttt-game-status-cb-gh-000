@@ -53,11 +53,13 @@ end
 
 def winner(board)
   winning_tiles = won?(board)
+  if winning_tiles == nil
+    return nil
+  end
+  
   if board[winning_tiles[0]] == "X"
     return "X"
   elsif board[winning_tiles[0]] == "O"
     return "O"
-  else
-    return nil
   end
 end
